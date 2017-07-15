@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only:[:new,:edit,:destroy,:create,:update]
+  
   def index
     @jobs = Job.all
   end
@@ -12,6 +13,10 @@ class JobsController < ApplicationController
     @job = Job.new
   end
 
+  def edit
+    @job = Job.find(params[:id])
+  end
+
   def create
     @job = Job.new(job_params)
 
@@ -20,6 +25,12 @@ class JobsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to jobs_path
   end
 
   private
