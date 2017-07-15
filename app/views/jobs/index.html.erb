@@ -1,0 +1,10 @@
+<div class="col-md-12">
+
+<div class="pull-right">
+  <%=link_to("new job", new_job_path, class:"btn btn-default ")%>
+</div>
+
+<table class="table  ">
+<%= render :partial =>"job", :collection =>@jobs, :as=>:job%>
+</table>
+</div>
