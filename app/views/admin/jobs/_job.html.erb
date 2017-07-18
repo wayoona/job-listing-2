@@ -2,7 +2,7 @@
   <td>
 <%=render_job_status(job)%>
   <%=link_to(job.title,job_path(job))%></td>
- <td><%=job.description%></td>
+ <td><%=link_to(job.resumes.count,admin_job_resumes_path(job))%></td>
   <td><%=job.up_bound%></td>
   <td><%=job.dw_bound%></td>
   <td>
