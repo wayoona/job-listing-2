@@ -1,0 +1,12 @@
+
+<div class ="col-md-4 col-md-offset-4">
+  <h2>投交履历到<%=@job.title%></h2>
+
+  <%= simple_form_for [@job,@resume] do |f| %>
+  <div class="form-job">
+    <%= f.input :content, input_html: { class: "form-control"} %>
+    <%= f.input :attachment %>
+  </div>
+  <%= f.submit "提交简历", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+<% end %>
+</div>
